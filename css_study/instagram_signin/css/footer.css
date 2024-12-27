@@ -1,7 +1,13 @@
-.footer-container {
+footer {
+    margin-bottom: 52px;
+}
+
+.footer-container-1 {
     display: inline-flex;
+    flex-wrap: wrap;
     justify-content: center;
     width: 100%;
+    margin-top: 24px;
 }
 
 .footer-link {
@@ -12,6 +18,14 @@
     &:hover {
         text-decoration: underline;
     }
+}
+
+.footer-container-2 {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin: 12px 0px;
 }
 
 .footer-copyright {
