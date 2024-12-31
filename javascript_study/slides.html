@@ -30,13 +30,13 @@
                 padding: 10px;
                 background-color: transparent;
                 cursor: pointer;
-                
+
                 & > svg {
                     height: 100px;
                 }
             }
 
-            & > .prev-button {  
+            & > .prev-button {
                 left: 50px;
             }
 
@@ -44,9 +44,6 @@
                 right: 50px;
             }
         }
-
-    
-
     </style>
 </head>
 <body>
@@ -55,38 +52,41 @@
         <label for="fixed">고정</label>
     </div>
     <div class="slide">
-        <button class="prev-button"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M9.224 1.553a.5.5 0 0 1 .223.67L6.56 8l2.888 5.776a.5.5 0 1 1-.894.448l-3-6a.5.5 0 0 1 0-.448l3-6a.5.5 0 0 1 .67-.223"></path></svg></button>
+        <button class="prev-button">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M9.224 1.553a.5.5 0 0 1 .223.67L6.56 8l2.888 5.776a.5.5 0 1 1-.894.448l-3-6a.5.5 0 0 1 0-.448l3-6a.5.5 0 0 1 .67-.223"></path></svg>
+        </button>
         <img src="" alt="">
-        <button class="next-button"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671"></path></svg></button>
+        <button class="next-button">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671"></path></svg>
+        </button>
     </div>
     <script>
         let currentIndex = 0;
         const urlList = [
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7OrtM7FfDgFfgOmRqL4R__bU5cjx1ltwy1A&s",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkk1M-YtYBO6w86QlsQiyml7vjIz0R1Tk28g&s",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1200px-CSS3_logo_and_wordmark.svg.png",
-            "https://i.namu.wiki/i/MuCO_ocla-FyadGnRZytkRLggQOcqxv_hXNjN7aYXDOPivIChJNdiRXp6vwSXbM6GcUL3pVTL-5U5TKQ0f1YhA.svg",
+            "https://velog.velcdn.com/images/ymh0951/post/ec877c43-d72f-45b3-8c37-46be92d92fa5/image.png",
+            "https://velog.velcdn.com/images/manimm1/post/085da37f-eb14-4bce-b6f7-f947d7273d88/image.png",
+            "https://bairesdev.mo.cloudinary.net/blog/2023/08/What-Is-JavaScript-Used-For.jpg?tx=w_1920,q_auto",
         ]
-        function handelPrevOnClick () {
-            // console.log("이전")
-            const fixedCheckBox = document.querySelector("#fixed");
 
-            if (currentIndex > 0) {
+        function handlePrevOnClick() {
+            const fixedCheckBox = document.querySelector("#fixed");
+            
+            if(currentIndex > 0) {
                 currentIndex--;
-            } else {
-                if (fixedCheckBox.checked) {
+            }else {
+                if(fixedCheckBox.checked) {
                     return;
                 }
-                currentIndex = urlList.length - 1 ;
+                currentIndex = urlList.length - 1;
             }
-            setSlideImgSrc(urlList[currentIndex])
+            setSlideImgSrc(urlList[currentIndex]);
         }
 
-        function handelNextOnClick () {
-            // console.log("다음")
+        function handleNextOnClick() {
             const fixedCheckBox = document.querySelector("#fixed");
-
-            if (currentIndex < urlList.length - 1) {
+            
+            if(currentIndex < urlList.length - 1) {
                 currentIndex++;
             } else {
                 if(fixedCheckBox.checked) {
@@ -98,17 +98,15 @@
         }
 
         function setSlideImgSrc(src) {
-            const imgElement = document.querySelector(".slide > img");
-            imgElement.src = src;
+            const slideImgElement = document.querySelector(".slide > img");
+            slideImgElement.src = src;
         }
 
         window.onload = () => {
-            const PrevSlideElement = document.querySelector(".prev-button");
-            PrevSlideElement.onclick = handlePrevOnClick;
-            
-            const NextSlideElement = document.querySelector(".next-button");
-            NextSlideElement.onclick = handelNextOnClick;
-            
+            const prevButtonElement = document.querySelector(".prev-button");
+            const nextButtonElement = document.querySelector(".next-button");
+            prevButtonElement.onclick = handlePrevOnClick;
+            nextButtonElement.onclick = handleNextOnClick;
             setSlideImgSrc(urlList[currentIndex]);
         }
     </script>
