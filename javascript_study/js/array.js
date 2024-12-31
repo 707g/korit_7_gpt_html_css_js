@@ -21,7 +21,7 @@ console.log(numbers.pop()); // 10
 console.log(numbers.includes(5)); // true   // 값을 포함하고 있는지 확인(java: contains)
 console.log(numbers.indexOf(5)); // 4       // 값의 위치(index)
 console.log(numbers.lastIndexOf(4)); // 3   // 뒤에서부터 값의 위치 (index)
-console.log(numbers.concat([11, 12, 13, 14, 15])); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15]    // 두 배열의 병합
+console.log(numbers.concat([11, 12, 13, 14, 15])); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15]    // 두 배열의 병합(기존의 배열에 추가하는 것이 아닌 새로운 배열)
 console.log(numbers); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
 const newNumbers = numbers.concat([11, 12, 13, 14, 15]);
 console.log(newNumbers); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15]
