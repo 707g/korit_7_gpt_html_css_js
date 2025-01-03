@@ -1,0 +1,33 @@
+.main-header {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 0 20px;
+    width: 100%;
+}
+
+.main-logo {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    font-size: 40px;
+    font-weight: 800;
+    color: #000000;
+
+    & > svg {
+        margin-right: 10px;
+        width: 150px;
+        height: 150px;
+    }
+}
+
+.write-link {
+    padding: 0 5px;
+    
+    & > svg {
+        width: 150px;
+        height: 150px;
+    }
+}
