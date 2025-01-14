@@ -48,7 +48,7 @@ function saveBoard() {
     localStorage.setItem("boardDatas", JSON.stringify(boardDatas));
 
     alert("게시글 작성 완료.");
-    location.href = "./list2.html";
+    // location.href = "./list2.html";
 }
 
 function clear() {
